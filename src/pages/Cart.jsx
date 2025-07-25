@@ -6,17 +6,25 @@ function Cart() {
 
 
 
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+useEffect(() => {
+  const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
-  }, []);
+}, []);
 
-  const handleDelete = (idToDelete) => {
-    const updatedCart = cart.filter((product) => product.id !== idToDelete);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
- 
+const handleDelete = (idToDelete) => {
+const updatedCart = cart.map((product) => {
+  if (product.id === idToDelete) {
+  if (product.quantity > 1) {
+    return { ...product, quantity: product.quantity - 1 };
+}
+  return null; 
+}
+  return product; 
+}).filter(Boolean);
+
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+};
   return (
     <div className="container py-5" style={{marginTop:'80px'}}>
       <h2 className="text-center">Your Cart</h2>

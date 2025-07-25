@@ -1,7 +1,7 @@
 
 function Contact() {
   return (
-    <div className="contact-page">
+    <div className="contact-page" style={{marginTop:'100px'}}>
       <h2 className="title">Contact Us</h2>
 
       <div className="contact-sections">
@@ -22,37 +22,8 @@ function Contact() {
           <textarea name="message" rows="5" placeholder="Your Message *" required></textarea>
           <button type="submit">Send</button>
         </form>
-      </div>
-      <div className="support-links">
-        <div className="support-box">
-          <h4>Support</h4>
-          <p>19 Cairo, Cairo, Egypt</p>
-          <p>store@gmail.com</p>
-          <p>+02011-9999-9999</p>
-        </div>
-
-        <div className="quick-links-box">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>Terms Of Use</li>
-            <li>Privacy Policy</li>
-            <li>About Us</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-
-        <div className="social-box">
-          <h4>Social Media</h4>
-          <ul className="social-links">
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Twitter</li>
-            <li>YouTube</li>
-            <li>WhatsApp</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      </div> 
+      </div> 
   );
 }
 

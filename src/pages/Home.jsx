@@ -43,16 +43,20 @@ function Home() {
     setTimeout(() => {
       setMessage('');
     }, 2000);
+
+    setMessage('Added to cart successfully!');
+    setTimeout(() => {
+      setMessage('');
+    }, 2000);
   };
 
 useEffect(() => {
   const elements = document.querySelectorAll(".fade-in-left");
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        observer.unobserve(entry.target); // عشان يشتغل مرة بس
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
@@ -69,21 +73,37 @@ useEffect(() => {
   return ( 
 <div className="home-bg text-black " style={{marginTop:'1750px',marginBottom:'1650px'}} >
   <div className="container">
+    {message && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: '#ce269e',
+          color: 'white',
+          padding: '10px 20px',
+          borderRadius: '5px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+          zIndex: 1000
+        }}>
+          {message}
+        </div>
+      )}
+
     <section className="text-center mb-5">
       <h1 className="display-6">Welcome To Our Website</h1>
-      <p className="mt-3 px-2">We offer a wide collection...</p>
+      <p className="mt-3 px-2">We offer a wide collection.</p>
 
       <div className="d-flex justify-content-center gap-3 mt-3 flex-wrap">
         <div><i className="bi bi-star-fill text-pink"></i> Top Brands</div>
         <div><i className="bi bi-gem text-pink me-2"></i> High Quality</div>
         <div><i className="bi bi-truck text-pink me-2"></i> Free Delivery</div>
       </div>
-      <button onClick={handleClick} className="btn btn-lg mt-4 rounded-5 my-btn" style={{ backgroundColor: '#4b4023', color: 'white' }}>
+      {/* <button onClick={handleClick} className="btn btn-lg mt-4 rounded-5 my-btn" style={{ backgroundColor: '#ce269e', color: 'white' }}>
         Shop Now
-      </button>
+      </button> */}
     </section>
     <section className="products mb-5" style={{marginBottom:'1750px'}}>
-      <h2 className="text-center mb-4">Products</h2>
+      <h2 className="text-center mb-4">Our Products</h2>
       <div className="row">
         {products.map((product) => (
           <div className="col-md-4 mb-4" key={product.id}>

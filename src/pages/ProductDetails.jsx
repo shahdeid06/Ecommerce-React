@@ -26,16 +26,21 @@ function ProductDetails() {
   if (error) return <h1 className="p-6 text-danger">{error}</h1>;
 
   return (
-    <div className="bgd-color">
-      
-      <h2 className="text-center">{products.title}</h2>
-      <img src={products.image} className="card-img-top p-3" alt={products.title} style={{ height: '300px', objectFit: 'contain' }}/>
-      <h4 className="text-center">Price: {products.price}</h4>
-      <p className="text-center"><h5> Description:</h5> {products.description}</p>
-      <div className="text-center mt-4 ">
-      <button className="back-btn px-4 rounded-pill fw-bold border-bold" onClick={()=> navigate('/products')}>🔙 Back to Products</button>
-      </div>
-    </div>
+ <div className="product-details-container bgd-color" style={{ marginBottom: '50px' }}>
+  <h2 className="text-center">{products.title}</h2>
+  <img src={products.image} className="card-img-top p-3" alt={products.title} style={{ height: '300px', objectFit: 'contain' }}/>
+  <h4 className="text-center text-price">Price: ${products.price}</h4>
+  <div className="description text-center">
+    <h5 className="description text-center" style={{width:'700px',display:'flex' ,justifyItems:'center', alignItems:'center',margin:'0 auto'}}>Description:<h6>{products.description}</h6></h5>
+    {/* <p>{products.description}</p> */}
+  </div>
+  <div className="text-center mt-4">
+    <button className="back-btn px-4 rounded-pill fw-bold" onClick={() => navigate('/products')}>
+      🔙 Back to Products
+    </button>
+  </div>
+</div>
+
   )
 }
 

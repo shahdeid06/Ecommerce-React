@@ -111,31 +111,32 @@ body {
     background-color: #ddd;
 }
 .bg-btn{
-    background-color: #ce269e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 50px;
-    margin-bottom: 10px;
-    flex-direction: column;
+  background-color: #f9a0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  flex-direction: column;
 }
 .bg-btn:hover{
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .back-btn{
-    background-color: #ce269e;
-    color: aliceblue;
-    width: 250px;
-    height: 45px;
-    border-radius: 50%;
-    outline-style: none;
+  background-color: #f38bd6;
+  color: aliceblue;
+  width: 250px;
+  height: 45px;
+  border-radius: 50%;
+  outline-style: none;
+  border: none;
 }
 .back-btn:hover{
-    background-color: #c1a86f;
+    background-color: #fc62d0;
 }
 .bgd-color{
-    background-color: #fae8bd;
+    background-color: linear-gradient(135deg, #f7a3f1,#f2f89e);
 }
 
 
@@ -225,7 +226,7 @@ body {
 .auth-container button {
   width: 100%;
   padding: 12px;
-  background-color: #4b4023;
+  background-color: #ce269e;
   border: none;
   border-radius: 6px;
   color: white;
@@ -234,7 +235,7 @@ body {
 }
 
 .auth-container button:hover {
-  background-color: #c1a86f;
+  background-color: #e041b3;
 }
 
 .auth-links {
@@ -243,7 +244,7 @@ body {
 }
 
 .auth-links span{
-  color: #c1a86f;
+  color: #ce269e;
   text-decoration: none;
   margin: 0 5px;
 }
@@ -279,7 +280,7 @@ body {
 }
 
 .contact-info h3 {
-  color: #4b4023;
+  color: #121212;
   margin-bottom: 10px;
 }
 
@@ -301,7 +302,7 @@ body {
 
 .contact-form button {
   padding: 12px;
-  background-color: #4b4023;
+  background-color: #ce269e;
   color: white;
   border: none;
   border-radius: 6px;
@@ -310,7 +311,7 @@ body {
 }
 
 .contact-form button:hover {
-  background-color: #c1a86f;
+  background-color: #f33dbf;
 }
 
 .support-links {
@@ -332,7 +333,7 @@ body {
 .support-box h4,
 .quick-links-box h4,
 .social-box h4 {
-  color: #333;
+  color: #ce269e;
   margin-bottom: 10px;
 }
 
@@ -345,7 +346,7 @@ body {
 .quick-links-box li,
 .social-box li {
   margin-bottom: 8px;
-  color: #4b4023;
+  color: #ce269e;
 }
 .footer {
   background-color: #f1f1f1;
@@ -370,7 +371,7 @@ body {
 
 .footer-section h4 {
   margin-bottom: 15px;
-  color: #4b4023;
+  color: #0c0c0c;
 }
 
 .footer-section ul {

@@ -49,7 +49,7 @@ function Products() {
           position: 'fixed',
           top: '20px',
           right: '20px',
-          backgroundColor: '#4CAF50',
+          backgroundColor: '#ce269e',
           color: 'white',
           padding: '10px 20px',
           borderRadius: '5px',
