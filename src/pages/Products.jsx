@@ -43,7 +43,7 @@ function Products() {
   if (error) return <h1 className="p-6 text-danger">{error}</h1>;
 
   return (
-    <div className="products-container py-5 bg-color" style={{ position: 'relative' }}>
+    <div className="products-container py-5 bg-color" style={{ position: 'relative' ,marginTop:'20px'}}>
       {message && (
         <div style={{
           position: 'fixed',

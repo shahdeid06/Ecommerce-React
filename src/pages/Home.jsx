@@ -71,9 +71,9 @@ useEffect(() => {
 
 
   return ( 
-<div className="home-bg text-black " style={{marginTop:'1750px',marginBottom:'1650px'}} >
+<div className="home-bg text-black " style={{paddingTop:'80px',paddingBottomBottom:'80px'}} >
   <div className="container">
-    {message && (
+    {/* {message && (
         <div style={{
           position: 'fixed',
           top: '20px',
@@ -87,7 +87,7 @@ useEffect(() => {
         }}>
           {message}
         </div>
-      )}
+      )} */}
 
     <section className="text-center mb-5">
       <h1 className="display-6">Welcome To Our Website</h1>
@@ -98,11 +98,11 @@ useEffect(() => {
         <div><i className="bi bi-gem text-pink me-2"></i> High Quality</div>
         <div><i className="bi bi-truck text-pink me-2"></i> Free Delivery</div>
       </div>
-      {/* <button onClick={handleClick} className="btn btn-lg mt-4 rounded-5 my-btn" style={{ backgroundColor: '#ce269e', color: 'white' }}>
+      <button onClick={handleClick} className="btn btn-lg mt-4 rounded-5 my-btn" style={{ backgroundColor: '#ce269e', color: 'white' }}>
         Shop Now
-      </button> */}
+      </button>
     </section>
-    <section className="products mb-5" style={{marginBottom:'1750px'}}>
+    {/* <section className="products mb-5" >
       <h2 className="text-center mb-4">Our Products</h2>
       <div className="row">
         {products.map((product) => (
@@ -119,10 +119,10 @@ useEffect(() => {
                 <button className="btn" onClick={() => handleAddToCart(product)}>Add To Cart</button>
               </div>
             </div>
-          </div>
+          </div> 
         ))}
       </div>
-    </section>
+    </section>*/}
   </div>
 </div>
 

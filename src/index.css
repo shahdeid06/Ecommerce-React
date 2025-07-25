@@ -69,6 +69,51 @@ body {
 .user-icon {
   font-size: 18px;
 }
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 55px;
+    left: auto;
+    right: 0;
+    background-color: #FF6BD6;
+    flex-direction: column;
+    align-items:start;
+    display: none;
+    padding: 20px 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    animation: slideDown 0.3s ease forwards;
+    width: 40%;
+    border-radius: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 
 .home-bg{
     margin: 0;
@@ -89,6 +134,7 @@ body {
 .text-pink:hover{
    color: white;
 }
+
 .bg-pink{
     padding: 10px 25px;
     border: none;
@@ -189,6 +235,7 @@ body {
 .product-card:nth-child(4) {
   animation-delay: 0.4s;
 }
+
 .btn-delete{
     background: #dc3545;
     color: white;
