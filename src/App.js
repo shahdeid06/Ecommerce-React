@@ -10,6 +10,7 @@ import ProductDetails from './pages/ProductDetails';
 import Footer from './components/Footer';
 
 function App() {
+  
   return (
     <>
     <Navbar></Navbar>

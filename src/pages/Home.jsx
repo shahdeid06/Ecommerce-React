@@ -1,12 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect,useState } from "react";
-import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
-  const navigate= useNavigate();
-  const handleClick =()=>{
+  const navigate = useNavigate();
+
+  const handleClick = () => {
     navigate("/products");
   };
   const [products, setProducts] = useState([]);
@@ -43,93 +44,67 @@ function Home() {
     setTimeout(() => {
       setMessage('');
     }, 2000);
-
-    setMessage('Added to cart successfully!');
-    setTimeout(() => {
-      setMessage('');
-    }, 2000);
   };
-
-useEffect(() => {
-  const elements = document.querySelectorAll(".fade-in-left");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  elements.forEach((el) => observer.observe(el));
-}, []);
-
 
   if (loading) return <h1 className="p-6 text-success">Loading...</h1>;
   if (error) return <h1 className="p-6 text-danger">{error}</h1>;
 
-
-
-  return ( 
-<div className="home-bg text-black " style={{paddingTop:'80px',paddingBottomBottom:'80px'}} >
-  <div className="container">
-    {/* {message && (
+  return (
+    <>
+    <div className="hero-section bg">
+      <div className="hero-text">
+        <h1>New Arrivals<br />Are Here</h1>
+        <button onClick={handleClick} className="shop-btn">
+          Shop Now ➯
+        </button>
+      </div>
+    </div>
+     <div className="products-container py-5 bg-color" style={{marginTop:'20px'}}>
+      {message && (
         <div style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          backgroundColor: '#ce269e',
-          color: 'white',
-          padding: '10px 20px',
-          borderRadius: '5px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-          zIndex: 1000
-        }}>
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)', 
+            color: 'var(--gold)', 
+            padding: '12px 24px',
+            borderRadius: '12px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(10px)', 
+            border: '1px solid var(--border-white)', 
+            zIndex: 9999, 
+            fontWeight: 'bold',
+            marginTop: '40px'
+  }}>
           {message}
         </div>
-      )} */}
-
-    <section className="text-center mb-5">
-      <h1 className="display-6">Welcome To Our Website</h1>
-      <p className="mt-3 px-2">We offer a wide collection.</p>
-
-      <div className="d-flex justify-content-center gap-3 mt-3 flex-wrap">
-        <div><i className="bi bi-star-fill text-pink"></i> Top Brands</div>
-        <div><i className="bi bi-gem text-pink me-2"></i> High Quality</div>
-        <div><i className="bi bi-truck text-pink me-2"></i> Free Delivery</div>
-      </div>
-      <button onClick={handleClick} className="btn btn-lg mt-4 rounded-5 my-btn" style={{ backgroundColor: '#ce269e', color: 'white' }}>
-        Shop Now
-      </button>
-    </section>
-    {/* <section className="products mb-5" >
-      <h2 className="text-center mb-4">Our Products</h2>
-      <div className="row">
-        {products.map((product) => (
-          <div className="col-md-4 mb-4" key={product.id}>
+      )}
+      <div className="row" style={{marginTop:'-60px'}}>
+        {products.slice(0, 3).map((product) => (
+          <div className="col-12 col-sm-6 col-md-4 mb-4" key={product.id}>
             <div className="product-card h-100 shadow-lg p-3">
               <Link to={`/productdetails/${product.id}`} className="text-decoration-none text-dark">
-                <img src={product.image} className="card-img-top p-3" alt={product.title} style={{ height: '300px', objectFit: 'contain' }} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
+                <img src={product.image} className="card-img-top p-3" alt={product.title} style={{ height: '250px', objectFit: 'contain' }}/>
+                <div className="card-body text-center">
+                  <h5 className="card-title" style={{color:'#f8c255'}}>{product.title}</h5>
                   <p className="card-text fw-bold">${product.price}</p>
                 </div>
               </Link>
-              <div className="bg-btn rounded text-center">
-                <button className="btn" onClick={() => handleAddToCart(product)}>Add To Cart</button>
+              <div style={{width:250,}} className="shop-now-container ">
+                <button className="shop-now2" onClick={() => handleAddToCart(product)}>
+                  Add To Cart
+                </button>
               </div>
             </div>
-          </div> 
+          </div>
         ))}
       </div>
-    </section>*/}
-  </div>
-</div>
-
-
-    
- 
-  )
+       <button onClick={handleClick} className="shop-now2" style={{fontSize:20, marginBottom:20}}>
+          Show More ➯
+        </button>
+    </div>
+    </>
+  );
 }
 
 export default Home;
