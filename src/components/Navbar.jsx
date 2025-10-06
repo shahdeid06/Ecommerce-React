@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
       <div className="topbar">
         <div className="topbar-logo">
-          <img src="/logo.png" alt="Logo" className="logo-image" />
+          <a href="/" className="home-link"><img src="/logo.png" alt="Logo" className="logo-image" /></a>
         </div>
          <div className="navbar">
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
@@ -20,7 +20,7 @@ const Navbar = () => {
           <li><Link to="/products">Products</Link></li>
           <li><Link to="/cart">Cart</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/login" className="login-link">Sing In <FaUser size={14} /></Link></li>
+          <li><Link to="/login" className="login-link">Sign In <FaUser size={14} /></Link></li>
         </ul>
       </div>
         <div className="search-bar">
@@ -28,7 +28,7 @@ const Navbar = () => {
           <button><FaSearch /></button>
         </div>
         <div className="carticon">
-          <span><Link to="/cart"><FaShoppingCart size={24} color="#fedc96" /></Link></span>
+          <span><Link to="/cart"><FaShoppingCart size={24} color="#ffe7b6" /></Link></span>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
           <FaBars />

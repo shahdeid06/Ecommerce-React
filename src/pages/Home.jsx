@@ -86,7 +86,7 @@ function Home() {
               <Link to={`/productdetails/${product.id}`} className="text-decoration-none text-dark">
                 <img src={product.image} className="card-img-top p-3" alt={product.title} style={{ height: '250px', objectFit: 'contain' }}/>
                 <div className="card-body text-center">
-                  <h5 className="card-title" style={{color:'#f8c255'}}>{product.title}</h5>
+                  <h5 className="card-title" style={{color:'white'}}>{product.title}</h5>
                   <p className="card-text fw-bold">${product.price}</p>
                 </div>
               </Link>
@@ -99,7 +99,7 @@ function Home() {
           </div>
         ))}
       </div>
-       <button onClick={handleClick} className="shop-now2" style={{fontSize:20, marginBottom:20}}>
+       <button onClick={handleClick} className="shop-now3" style={{fontSize:20, marginBottom:20}}>
           Show More ➯
         </button>
     </div>

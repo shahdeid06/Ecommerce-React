@@ -41,24 +41,24 @@ const handleDelete = (idToDelete) => {
 
   
   return (
-    <div className="container py-5" style={{marginTop:'80px'}}>
-      <h2 className="text-center" style={{color:'#e7ded1'}}>Your Cart</h2>
+    <div className="cart-container py-5" style={{marginTop:'80px'}}>
+      <h2 className="text-center" style={{color:'#0c2344' , fontSize:'35px' , fontWeight:'bold'}}>Your Cart</h2>
       {cart.length === 0 ? (
-        <p className="text-center" style={{color:'#e7ded1'}}>No items in cart</p>
+        <p className="text-center" style={{color:'#0c2344' , fontSize:'35px' , fontWeight:'bold'}}>No items in cart</p>
       ) : (
         cart.map((product, index) => (
-          <div key={index} className="card p-3 my-3">
-            <img src={product.image} alt={product.title} style={{ height: 300, width: 300 }}/>
+          <div key={index} className="cart-card p-3 my-3">
+            <img src={product.image} alt={product.title} style={{ height: 200, width: 300 }} className="cart-img"/>
             <h5>{product.title}</h5>
             <p>Price: ${product.price}</p>
-            <p>Quantity: {product.quantity}</p>
-            <button className="btn-qty" onClick={() => handleDecrease(product.id)}>-1</button>
+            <p>Quantity: {product.quantity}  <button className="btn-qty" onClick={() => handleDecrease(product.id)}>(-1)</button></p>
+            
              <button className="btn-shop"onClick={() => setShowPayment(true)}>Shop Now</button>
                          <button className="btn-delete" onClick={() => handleDelete(product.id)}>Delete</button>
           </div>
         ))
       )}
-      <h4 style={{color:'#e7ded1'}}>Total: ${cart.reduce((acc, p) => acc + p.price * p.quantity, 0).toFixed(2)}</h4>
+      <h4 style={{color:'green' , fontSize:'30px' , fontWeight:'bold' , textAlign:'center'}}>Total: ${cart.reduce((acc, p) => acc + p.price * p.quantity, 0).toFixed(2)}</h4>
        {showPayment && (
         <div className="payment-container mt-5">
           <h3 style={{color:'#e7ded1'}}>Payment Method</h3>
