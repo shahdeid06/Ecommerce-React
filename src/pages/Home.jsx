@@ -22,7 +22,7 @@ function Home() {
         setLoading(false);
       })
       .catch((err) => {
-        setError("ERROR");
+        setError("ERROR" , err);
         setLoading(false);
       });
   }, []);
@@ -30,6 +30,17 @@ function Home() {
   const handleAddToCart = (product) => {
     const oldCart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingIndex = oldCart.findIndex((item) => item.id === product.id);
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      const token = localStorage.getItem("token");
+      console.log("Token:", token);
+      } else {
+      alert("⚠️ LOGIN FIRST PLEASE");
+      return;
+    }
+
 
     if (existingIndex !== -1) {
       oldCart[existingIndex].quantity += 1;
@@ -39,7 +50,7 @@ function Home() {
 
     localStorage.setItem("cart", JSON.stringify(oldCart));
 
-  
+
     setMessage('Added to cart successfully!');
     setTimeout(() => {
       setMessage('');

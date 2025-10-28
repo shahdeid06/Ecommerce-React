@@ -729,6 +729,28 @@ main, .page-content, .home-bg, .container {
 .btn-qty:hover {
   background: #f5be34;
 }
+.back-btn{
+    background: #0c2344;
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.back-btn:hover {
+   background-color: transparent;
+  border: 2px solid #0c2344;
+  color: #0c2344;
+}
+.description{
+  margin: 0 auto;
+  color: #0c2344;
+  /* text-align: center; */
+}
+.price-d{
+  color: #f0b624;
+  font-weight: bold;
+}
 
 .btn-delete {
   background: #0c2344;

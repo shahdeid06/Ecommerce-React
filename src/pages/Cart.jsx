@@ -5,8 +5,6 @@ function Cart() {
   const [showPayment, setShowPayment] = useState(false);
   
 
-
-
 useEffect(() => {
   const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);

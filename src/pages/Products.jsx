@@ -15,7 +15,7 @@ function Products() {
         setLoading(false);
       })
       .catch((err) => {
-        setError("ERROR");
+        setError("ERROR", err);
         setLoading(false);
       });
   }, []);
@@ -23,6 +23,17 @@ function Products() {
   const handleAddToCart = (product) => {
     const oldCart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingIndex = oldCart.findIndex((item) => item.id === product.id);
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      const token = localStorage.getItem("token");
+      console.log("Token:", token);
+      } else {
+      alert("⚠️ LOGIN FIRST PLEASE");
+      return;
+    }
+  
 
     if (existingIndex !== -1) {
       oldCart[existingIndex].quantity += 1;
